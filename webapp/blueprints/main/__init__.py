@@ -1,9 +1,11 @@
+"""Hello world example blueprint.
+"""
 from flask import Blueprint
 
-blueprint = Blueprint("main", __name__)
+BLUEPRINT = Blueprint("main", __name__)
 
 
-@blueprint.route("/")
-def HelloWorld():
+@BLUEPRINT.route("/")
+def hello_world():
     """Say hello"""
     return "Hello World!"

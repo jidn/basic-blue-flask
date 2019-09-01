@@ -1,8 +1,10 @@
 """Add additional `flask` command-line options.
 """
-from .test_cli import test
+from .lint_cli import lint
+from .pytest_cli import test
 
 
 def register_commands(app):
     """Register `Click` commands with flask app."""
-    app.cli.add_command(test)
+    for command in (test, lint):
+        app.cli.add_command(command)
